@@ -20,3 +20,8 @@ class Calisan(Insan):
         elif self.al_tecrube() >= 24 and self.al_tecrube() <= 48 and self.al_maas() <= 15000: return self.al_maas() % self.al_tecrube()
         elif self.al_tecrube() > 48 and self.al_maas() <= 25000: return (self.al_maas() % self.al_tecrube()) / 2
         else: return 0
+    
+    def yeni_maas(self): return self.al_maas() * (1 + self.zam_hakki()/100)
+   
+    def __str__(self):
+        return super().__str__() + "\nSektor: " + self.al_sektor() + "\nTecrübe: "+str(self.al_tecrube())+"\nYeni Maaş: " + str(self.yeni_maas())
